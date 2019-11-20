@@ -11,10 +11,11 @@ function setCookie(name: string, value: string, days: number) {
     expires = '; expires=' + date.toUTCString();
   }
 
-  document.cookie = `${name}=${value || ''}${expires}; domain=.lbry.tv; path=/;Secure;`;
+  document.cookie = `${name}=${value || ''}${expires}; domain=.lbry.tv; path=/; SameSite=Lax; Secure;`;
 }
 
 function getCookie(name: string) {
+  console.log('get cookie: ', document.cookie);
   const nameEQ = name + '=';
   const cookies = document.cookie.split(';');
 
