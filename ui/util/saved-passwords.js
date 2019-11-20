@@ -11,7 +11,7 @@ function setCookie(name: string, value: string, days: number) {
     expires = '; expires=' + date.toUTCString();
   }
 
-  document.cookie = `${name}=${value || ''}${expires}; domain=.lbry.tv; path=/;samesite=strict;`;
+  document.cookie = `${name}=${value || ''}${expires}; domain=.lbry.tv; path=/;Secure;`;
 }
 
 function getCookie(name: string) {
