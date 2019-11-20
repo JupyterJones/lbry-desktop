@@ -15,7 +15,6 @@ function setCookie(name: string, value: string, days: number) {
 }
 
 function getCookie(name: string) {
-  console.log('get cookie', document.cookie);
   const nameEQ = name + '=';
   const cookies = document.cookie.split(';');
 
