@@ -898,5 +898,11 @@
   "Checking your publishes...": "Checking your publishes...",
   "Checking your publishes": "Checking your publishes",
   "Checking for channels": "Checking for channels",
-  "files": "files"
+  "files": "files",
+  "from LBRY?": "from LBRY?",
+  "Delete this file from my computer": "Delete this file from my computer",
+  "Abandon on blockchain (reclaim %amount% LBC)": "Abandon on blockchain (reclaim %amount% LBC)",
+  "PDF opened externally.": "PDF opened externally.",
+  "Click here": "Click here",
+  "to open it again.": "to open it again."
 }
