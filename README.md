@@ -128,18 +128,22 @@ If the app isn't building, or `yarn xxx` commands aren't working you may need to
 If you _really_ think something might have gone wrong, you can force your repo to clear everything that doesn't match the repo with `git reset --hard HEAD && git clean -fxd && git pull -r`
 
 ## Docker
-docker build -t <dockerhubname>/lbry .
+docker build -t dockerhubname/lbry .
 
-This will start the docker and enter it.
-$ docker run --name=lbryapp -it -p 1337:1337 jacknorthrup/lbry:latest bash
+Then you can start the docker and enter the container with.
+$ docker run --name=lbryapp -it -p 1337:1337 dockerhubname/lbry:latest bash
 When inside run yarn dev:web-server   (this will also take a few minutes to start)
-root@<container>:/app# yarn dev:web-server
-
+root@container:/app# yarn dev:web-server
 
 # OR all-in-one: (this will also take a few minutes to start)
-$ docker run --name=lbryapp -it -p 1337:1337 jacknorthrup/lbry:latest yarn dev:web-server
+$ docker run --name=lbryapp -it -p 1337:1337 dockerhubname/lbry:latest yarn dev:web-server
 
 Then use browser to open http://localhost:1337/ 
+
+When using a container 'name' the app may be restarted with:
+docker restart lbryapp 
+Give it time, the 'restart' hooks up the ports and you can open localhost:1337
+When you 'restart' you will not be inside the container
 
 To look at the docker running:
 $ docker ps
