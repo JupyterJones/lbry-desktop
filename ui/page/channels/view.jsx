@@ -4,7 +4,6 @@ import ClaimList from 'component/claimList';
 import Page from 'component/page';
 import Button from 'component/button';
 import YoutubeTransferStatus from 'component/youtubeTransferStatus';
-import Spinner from 'component/spinner';
 
 type Props = {
   channels: Array<ChannelClaim>,
@@ -37,7 +36,7 @@ export default function ChannelsPage(props: Props) {
     <Page>
       {hasYoutubeChannels && <YoutubeTransferStatus hideChannelLink />}
 
-      {channels && Boolean(channels.length) && (
+      {channels && channels.length ? (
         <div className="card">
           <ClaimList
             header={__('Your Channels')}
@@ -45,30 +44,16 @@ export default function ChannelsPage(props: Props) {
             uris={channels.map(channel => channel.permanent_url)}
           />
         </div>
-      )}
-      {!(channels && channels.length) && (
-        <React.Fragment>
-          {!fetchingChannels ? (
-            <section className="main--empty">
-              <div className=" section--small">
-                <h2 className="section__title--large">{__('No Channels Created Yet')}</h2>
+      ) : (
+        <section className="main--empty">
+          <div className=" section--small">
+            <h2 className="section__title--large">{__('No Channels Created Yet')}</h2>
 
-                <div className="section__actions">
-                  <Button button="primary" navigate="/$/publish" label={__('Create A Channel')} />
-                </div>
-              </div>
-            </section>
-          ) : (
-            <section className="main--empty">
-              <div className=" section--small">
-                <h2 className="section__title--small">
-                  {__('Checking for channels')}
-                  <Spinner type="small" />
-                </h2>
-              </div>
-            </section>
-          )}
-        </React.Fragment>
+            <div className="section__actions">
+              <Button button="primary" navigate="/$/publish" label={__('Create A Channel')} />
+            </div>
+          </div>
+        </section>
       )}
     </Page>
   );

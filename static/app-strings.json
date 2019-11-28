@@ -889,14 +889,6 @@
   "allow you to receive notifications related to new content.": "allow you to receive notifications related to new content.",
   "Suggested": "Suggested",
   "%amountBehind% blocks behind": "%amountBehind% blocks behind",
-  "Startup Preferences": "Startup Preferences",
-  "This will clear the application cache, and might fix issues you are having. Your wallet will not be affected. ": "This will clear the application cache, and might fix issues you are having. Your wallet will not be affected. ",
-  "Start minimized": "Start minimized",
-  "Improve view speed and help the LBRY network by allowing the app to cuddle up in your system tray.": "Improve view speed and help the LBRY network by allowing the app to cuddle up in your system tray.",
-  "Content Type": "Content Type",
-  "Submit Feedback": "Submit Feedback",
-  "Checking your publishes...": "Checking your publishes...",
-  "Checking your publishes": "Checking your publishes",
-  "Checking for channels": "Checking for channels",
-  "files": "files"
+  "Error Starting Up": "Error Starting Up",
+  "Reach out to hello@lbry.com for help, or check out %help_link%.": "Reach out to hello@lbry.com for help, or check out %help_link%."
 }

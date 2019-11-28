@@ -58,7 +58,7 @@
   overflow: visible;
   padding: var(--spacing-medium);
 
-  &:not(.claim-preview--inline):not(.claim-preview--pending):not(.claim-preview--inactive) {
+  &:not(.claim-preview--inline) {
     cursor: pointer;
   }
 
@@ -105,8 +105,20 @@
   background-color: var(--color-card-background-highlighted);
 }
 
+.claim-preview--visited {
+  // Still keep the normal styles on hover regardless of if they have visited the claim
+  &:not(:hover) {
+    // color: lighten(black; //black, 35%);
+  }
+}
+
 .claim-preview--pending {
+  cursor: pointer;
   opacity: 0.6;
+
+  &:hover {
+    background-color: black; //white;
+  }
 }
 
 .claim-preview--inline {
@@ -179,6 +191,6 @@
 }
 
 .claim-upload__progress--inner {
-  background: var(--color-primary-alt);
+  background: black; //teal-1;
   padding: var(--spacing-miniscule);
 }
