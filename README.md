@@ -127,6 +127,28 @@ If the app isn't building, or `yarn xxx` commands aren't working you may need to
 
 If you _really_ think something might have gone wrong, you can force your repo to clear everything that doesn't match the repo with `git reset --hard HEAD && git clean -fxd && git pull -r`
 
+## Docker
+docker build -t <dockerhubname>/lbry .
+
+This will start the docker and enter it.
+$ docker run --name=lbryapp -it -p 1337:1337 jacknorthrup/lbry:latest bash
+When inside run yarn dev:web-server   (this will also take a few minutes to start)
+root@<container>:/app# yarn dev:web-server
+
+
+# OR all-in-one: (this will also take a few minutes to start)
+$ docker run --name=lbryapp -it -p 1337:1337 jacknorthrup/lbry:latest yarn dev:web-server
+
+Then use browser to open http://localhost:1337/ 
+
+To look at the docker running:
+$ docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED           STATUS           PORTS                   NAMES
+e06aea5c1a9c   7b2a75396ffe   "docker-entrypoint.s…"   30 seconds ago    Up 27 seconds    0.0.0.0:1337->1337/tcp  lbryapp
+
+
+
+
 ## Contributing
 
 We :heart: contributions from everyone and contributions to this project are encouraged, and compensated. We welcome [bug reports](https://github.com/lbryio/lbry-desktop/issues/), [bug fixes](https://github.com/lbryio/lbry-desktop/pulls) and feedback is always appreciated. For more details, see [CONTRIBUTING.md](CONTRIBUTING.md).
@@ -144,60 +166,3 @@ We take security seriously. Please contact security@lbry.com regarding any secur
 ## Contact
 
 The primary contact for this project is [@seanyesmunt](https://github.com/seanyesmunt).
-
-backend.js:6 redux-persist: rehydrate for "v0" called after timeout. 
-{app: {…}, content: {…}, fileInfo: {…}, publish: {…}, search: {…}, …}
- undefined
-r @ backend.js:6
-_rehydrate  @ persistReducer.js?b8d7:50
-(anonymous) @ persistReducer.js?b8d7:79
-Promise.then (async)    
-(anonymous) @ persistReducer.js?b8d7:78
-Promise.then (async)    
-(anonymous) @ persistReducer.js?b8d7:74
-batchingReducer @ store.js?f64a:41
-p @ VM112:1
-v @ VM112:1
-(anonymous) @ VM112:1
-dispatch  @ createStore.js?af8a:165
-e @ VM112:1
-(anonymous) @ store.js?f64a:31
-(anonymous) @ index.js?cd40:11
-(anonymous) @ middleware.js?bfeb:22
-action  @ bundle.es.js?a508:1479
-dispatch  @ VM112:1
-persist @ persistStore.js?2723:93
-persistStore  @ persistStore.js?2723:97
-(anonymous) @ store.js?f64a:152
-(anonymous) @ store.js:216
-./ui/store.js @ ui.js:20128
-__webpack_require__ @ ui.js:727
-fn  @ ui.js:101
-(anonymous) @ analytics.js:7
-(anonymous) @ analytics.js:234
-./ui/analytics.js @ ui.js:15265
-__webpack_require__ @ ui.js:727
-fn  @ ui.js:101
-(anonymous) @ settings.js:17
-(anonymous) @ settings.js:233
-./ui/redux/actions/settings.js  @ ui.js:19985
-__webpack_require__ @ ui.js:727
-fn  @ ui.js:101
-(anonymous) @ index.js:12
-(anonymous) @ index.js:101
-./ui/component/app/index.js @ ui.js:15289
-__webpack_require__ @ ui.js:727
-fn  @ ui.js:101
-(anonymous) @ index.jsx:5
-(anonymous) @ index.jsx:290
-./ui/index.jsx  @ ui.js:18581
-__webpack_require__ @ ui.js:727
-fn  @ ui.js:101
-0 @ ui.js:20342
-__webpack_require__ @ ui.js:727
-(anonymous) @ ui.js:794
-(anonymous) @ ui.js:797
-﻿
-
-​
-
